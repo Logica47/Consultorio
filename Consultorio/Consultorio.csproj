@@ -153,6 +153,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\citasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\pacientesController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="crypto.cs" />
     <Compile Include="Global.asax.cs">
@@ -378,6 +379,11 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\IniciarSesion.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
+    <Content Include="Views\pacientes\Create.cshtml" />
+    <Content Include="Views\pacientes\Delete.cshtml" />
+    <Content Include="Views\pacientes\Details.cshtml" />
+    <Content Include="Views\pacientes\Edit.cshtml" />
+    <Content Include="Views\pacientes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Usser\" />

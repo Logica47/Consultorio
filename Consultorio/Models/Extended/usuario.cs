@@ -30,7 +30,7 @@ namespace Consultorio.Models
         public string Correo { get; set; }
 
         [Display(Name = "Fecha de nacimiento")]
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM-dd-yyyy}")]
         public string FechaNacimiento { get; set; }
 

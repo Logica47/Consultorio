@@ -23,7 +23,7 @@ namespace Consultorio.Controllers
         public ActionResult Registration([Bind(Exclude = "CodigoActivacion,VerificarCorreo")]Usuario user)
         {
 
-            bool Status = false;
+           // bool Status = false;
             string message = "";
 
             //validar correo
@@ -35,7 +35,25 @@ namespace Consultorio.Controllers
                 {
                     ModelState.AddModelError("EmailExist", "El correo ya existe");
                 }return View(user);
+
+               
+                //Hash
+                #region Hash Contrase?a
+                user.Contraseña = crypto.Hash(user.Contraseña);
+
+                #endregion
+
+                #region Guardar en Db
+                using (dbloginEntities dc = new dbloginEntities())
+                {
+                    dc.Usuarios.Add(user);
+                    dc.SaveChanges();
+                }
+
+                #endregion
             }
+
+
             else
             {
                 message = "Solicitud Invalidad";
@@ -52,6 +70,11 @@ namespace Consultorio.Controllers
                 var v = dc.Usuarios.Where(a => a.Correo == emailID).FirstOrDefault();
                 return v != null;
             }
+        }
+        [NonAction]
+        public void SendVerificationLinkEmail(string correo, string activacionCode)
+        {
+
         }
 
     }

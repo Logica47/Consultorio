@@ -22,5 +22,7 @@ namespace Consultorio.Models
         public string Contraseña { get; set; }
         public bool VerificarCorreo { get; set; }
         public System.Guid CodigoActivacion { get; set; }
+
+        public bool emailID { get; set; }
     }
 }
